@@ -4,7 +4,6 @@ Site institucional da **STAFF — Prestação de Serviços Administrativos LTDA*
 
 **Responsável pela implementação técnica:** João Paulo.
 
-**Site publicado inicialmente em:** https://jonh486-netizen.github.io/staff-site/  
 **Domínio institucional previsto:** https://staffservicos.com
 
 > **Nota:** a configuração e a disponibilidade do domínio próprio devem ser verificadas separadamente. O endereço do GitHub Pages é a referência inicial do projeto.
