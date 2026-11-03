@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="STAFF - Prestação de Serviços Administrativos LTDA. Soluções e apoio administrativo em Fortaleza, Ceará.">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>STAFF | Serviços Administrativos</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --orange: #e97824;
+      --orange-dark: #c75e15;
+      --navy: #182b40;
+      --text: #293748;
+      --muted: #64748b;
+      --light: #f7f8fa;
+      --border: #e7ebef;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      max-width: 205px;
+      max-height: 65px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    .nav-cta {
+      padding: 11px 20px;
+      border: 1px solid var(--orange);
+      border-radius: 5px;
+      color: var(--orange);
+    }
+
+    /* BANNER PRINCIPAL */
+
+    .hero {
+      background: linear-gradient(
+        120deg,
+        #ffffff 0%,
+        #f8f9fb 65%,
+        #f1f4f7 100%
+      );
+      padding: 110px 0 115px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      color: var(--navy);
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.15;
+      letter-spacing: -1.8px;
+      font-weight: 700;
+      margin: 0 0 25px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--orange);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      max-width: 730px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.25;
+      letter-spacing: -.7px;
+      margin: 0 0 18px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .accent-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--orange);
+      margin-bottom: 23px;
+    }
+
+    /* SOBRE */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .about-panel {
+      background: var(--light);
+      border-left: 4px solid var(--orange);
+      padding: 40px;
+      border-radius: 4px;
+    }
+
+    .about-panel h3 {
+      color: var(--navy);
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    /* SERVIÇOS */
+
+    .services {
+      background: var(--light);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px 30px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #f1c19d;
+      box-shadow: 0 12px 30px rgba(0,0,0,.05);
+    }
+
+    .service-number {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      line-height: 1.35;
+      margin: 20px 0 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* INFORMAÇÕES */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .info-item {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 22px;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* PRIVACIDADE */
+
+    .privacy {
+      background: var(--light);
+    }
+
+    .privacy-content {
+      max-width: 850px;
+    }
+
+    .privacy-content h3 {
+      color: var(--navy);
+      margin-top: 30px;
+    }
+
+    .privacy-content p {
+      color: var(--muted);
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: var(--navy);
+      color: #d4dce4;
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+
+    .footer-logo {
+      max-width: 200px;
+      max-height: 80px;
+      object-fit: contain;
+      background: white;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #b9c5d0;
+    }
+
+    footer h3 {
+      color: white;
+      font-size: 15px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 22px;
+      font-size: 13px;
+      color: #a9b7c5;
+      text-align: center;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 800px) {
+      .header-inner {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .about-grid,
+      .service-grid,
+      .info-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .about-panel {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CABEÇALHO -->
+
+  <header>
+    <div class="container header-inner">
+
+      <a class="logo" href="#inicio" aria-label="STAFF - Início">
+        <img src="staff-logo-1.png" alt="Logotipo STAFF">
+      </a>
+
+      <nav aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">A STAFF</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#institucional">Institucional</a>
+        <a href="#privacidade">Privacidade</a>
+        <a class="nav-cta" href="#contato">Contato</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INÍCIO -->
+
+    <section class="hero" id="inicio">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            STAFF · Serviços Administrativos
+          </span>
+
+          <h1>
+            Organização, eficiência
+            e <span>soluções administrativas.</span>
+          </h1>
+
+          <p>
+            Serviços de apoio administrativo,
+            organização de processos e suporte
+            às atividades operacionais.
+          </p>
+
+          <a class="btn" href="#sobre">
+            Conheça a STAFF
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+
+    <section id="sobre">
+      <div class="container about-grid">
+
+        <div class="about-text">
+
+          <div class="section-heading">
+            <span class="accent-line"></span>
+            <span class="eyebrow">Quem somos</span>
+
+            <h2>
+              Uma estrutura voltada
+              ao apoio administrativo.
+            </h2>
+          </div>
+
+          <p>
+            A STAFF - Prestação de Serviços
+            Administrativos LTDA é uma empresa
+            estabelecida em Fortaleza, Ceará.
+          </p>
+
+          <p>
+            Sua atuação está relacionada
+            à prestação de serviços administrativos
+            e atividades de apoio à organização
+            e ao funcionamento de operações empresariais.
+          </p>
+
+        </div>
+
+        <div class="about-panel">
+
+          <h3>Compromisso institucional</h3>
+
+          <p>
+            Organização, responsabilidade e
+            atenção aos processos administrativos
+            são princípios que orientam
+            nossa apresentação institucional.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+
+    <section class="services" id="servicos">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="accent-line"></span>
+          <span class="eyebrow">Áreas de atuação</span>
+
+          <h2>
+            Apoio para as rotinas
+            administrativas.
+          </h2>
+
+          <p>
+            Conheça algumas atividades
+            relacionadas ao segmento de
+            serviços administrativos.
+          </p>
+
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <h3>Apoio administrativo</h3>
+            <p>
+              Suporte às atividades de rotina,
+              organização de informações
+              e processos administrativos.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <h3>Organização documental</h3>
+            <p>
+              Apoio à organização, classificação
+              e controle de documentos
+              e informações.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <h3>Suporte operacional</h3>
+            <p>
+              Atividades de suporte
+              aos procedimentos administrativos
+              e operacionais.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INFORMAÇÕES EMPRESARIAIS -->
+
+    <section id="institucional">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="accent-line"></span>
+          <span class="eyebrow">Transparência</span>
+
+          <h2>Informações institucionais</h2>
+
+          <p>
+            Dados cadastrais e localização
+            da empresa.
+          </p>
+
+        </div>
+
+        <div class="info-grid">
+
+          <div class="info-item">
+            <strong>Razão social</strong>
+            <span>
+              STAFF - PRESTACAO DE SERVICOS
+              ADMINISTRATIVOS LTDA
+            </span>
+          </div>
+
+          <div class="info-item">
+            <strong>CNPJ</strong>
+            <span>08.242.209/0001-73</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Endereço</strong>
+            <span>
+              Rua General Tertuliano Potyguara,
+              575, Sala 102, Aldeota
+            </span>
+          </div>
+
+          <div class="info-item">
+            <strong>Cidade e CEP</strong>
+            <span>
+              Fortaleza - CE · 60135-280
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRIVACIDADE -->
+
+    <section class="privacy" id="privacidade">
+      <div class="container privacy-content">
+
+        <div class="section-heading">
+
+          <span class="accent-line"></span>
+          <span class="eyebrow">Proteção de dados</span>
+
+          <h2>Privacidade e proteção de dados</h2>
+
+          <p>
+            A STAFF reconhece a importância
+            da privacidade e da proteção
+            de dados pessoais.
+          </p>
+
+        </div>
+
+        <h3>Informações fornecidas</h3>
+
+        <p>
+          Informações encaminhadas voluntariamente
+          pelos canais oficiais de contato
+          poderão ser utilizadas para
+          identificar e atender solicitações.
+        </p>
+
+        <h3>Atendimento eletrônico</h3>
+
+        <p>
+          Os canais eletrônicos poderão ser
+          utilizados para comunicação,
+          acompanhamento de solicitações
+          e atendimento administrativo.
+        </p>
+
+        <h3>Proteção das informações</h3>
+
+        <p>
+          O tratamento de dados pessoais deverá
+          observar a legislação aplicável,
+          incluindo a Lei Geral de Proteção
+          de Dados Pessoais (LGPD).
+        </p>
+
+        <p>
+          Este texto é uma apresentação
+          preliminar. A política de privacidade
+          completa será disponibilizada
+          antes da implantação dos serviços
+          de atendimento automatizado.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer id="contato">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <img
+            class="footer-logo"
+            src="staff-logo-2.png"
+            alt="STAFF - Serviços Administrativos"
+          >
+
+          <p>
+            STAFF - Prestação de Serviços
+            Administrativos LTDA
+          </p>
+
+          <p>CNPJ: 08.242.209/0001-73</p>
+
+        </div>
+
+        <div>
+
+          <h3>Localização</h3>
+
+          <p>
+            Rua General Tertuliano Potyguara, 575<br>
+            Sala 102 - Aldeota<br>
+            Fortaleza - CE<br>
+            CEP 60135-280
+          </p>
+
+          <p>
+            Site: www.staffservicos.com
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span>
+        STAFF - Prestação de Serviços
+        Administrativos LTDA.
+        Todos os direitos reservados.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
